@@ -204,3 +204,22 @@ i.k0, .kd.k0 { background: rgba(255, 255, 255, .18); } i.k1, .kd.k1 { background
 .pm-list li.k1 { border-left-color: #7fd4ff; } .pm-list li.k2 { border-left-color: #ffd166; } .pm-list li.k3 { border-left-color: #5eea9a; }
 .pm-s { color: var(--muted); font-size: .88rem; margin-top: 4px; line-height: 1.4; }
 .pjournal { list-style: none; padding: 0; display: grid; gap: 10px; } .pjournal li { padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--card2); } .pjournal small { color: var(--muted); } .pjournal p { margin: 6px 0 0; white-space: pre-wrap; }
+
+/* ===== «Фигуры»: каталог и построения ===== */
+.figtabs { margin: 6px 0 16px; }
+.figgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(140px, 100%), 1fr)); gap: 12px; margin-bottom: 18px; }
+.figcard { display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 16px; border: 1px solid var(--line); background: var(--card2); transition: .2s; min-width: 0; }
+.figcard:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .15); box-shadow: var(--shadow), var(--glow); }
+.figcard b { font-size: .98rem; } .figcard small { color: var(--muted); line-height: 1.35; }
+.figsvg { width: 100%; height: auto; display: block; } .figsvg text { font-family: "Segoe UI", system-ui, sans-serif; }
+.figdetail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 20px; align-items: start; }
+.figdetail h1 { margin-top: 0; } .figdetail ul { padding-left: 1.1rem; display: grid; gap: 6px; line-height: 1.45; }
+.fd-pic { background: rgba(255, 255, 255, .05); border-radius: 14px; padding: 10px; }
+@media (max-width: 720px) { .figdetail { grid-template-columns: 1fr; } }
+.btasks { margin: 6px 0 12px; } .btasks .tchip { min-width: 42px; text-align: center; }
+.bwrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 760px) { .bwrap { grid-template-columns: 1fr; } }
+.bboard { background: rgba(5, 12, 34, .35); border-radius: 14px; border: 1px solid var(--line); touch-action: none; }
+.board { width: 100%; height: auto; display: block; cursor: crosshair; user-select: none; } .board text { font-family: "Segoe UI", system-ui, sans-serif; }
+.bside h2 { margin: 10px 0; } .meas { margin: 6px 0; line-height: 1.5; overflow-wrap: anywhere; }
+.figcard b, .figcard small { overflow-wrap: anywhere; hyphens: auto; } .figgrid > * { min-width: 0; }

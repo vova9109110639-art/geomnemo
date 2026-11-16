@@ -795,6 +795,7 @@
     switch (v) {
       case 'learn': viewLearn(parts[1]); break;
       case 'path': if (window.PATH) PATH.view(app, parts); else viewHome(); break;
+      case 'figures': if (window.FIG) FIG.view(app, parts); else viewHome(); break;
       case 'card': viewCard(parts[1]); break;
       case 'train': viewTrain(); break;
       case 'tech': viewTech(); break;
@@ -827,7 +828,7 @@
   /* ---------- после отрисовки: каскад, счётчики, кольца ---------- */
   function afterRender() {
     const H = innerHeight * 1.25; let i = 0;
-    app.querySelectorAll('.tcard, .mcard, .b, .fcard, .step, .tech, .prow, .route li, .fact, .dot, .labcard, .wrong, .ach, .cnode, .daily, .tk').forEach((el) => {
+    app.querySelectorAll('.figcard, .tcard, .mcard, .b, .fcard, .step, .tech, .prow, .route li, .fact, .dot, .labcard, .wrong, .ach, .cnode, .daily, .tk').forEach((el) => {
       if (el.getBoundingClientRect().top < H) { el.style.setProperty('--d', (i++ * 45) + 'ms'); el.classList.add('rv'); } else el.classList.add('rv-s');
     });
     FX.runCounters(app);
@@ -877,7 +878,7 @@
   });
   function input() {}
   /* ---------- управление как в XMB: ◀ ▶ разделы, ▲ ▼ пункты, Enter — ✕, Esc — ○ ---------- */
-  const NAV_ORDER = ['', 'learn', 'path', 'train', 'lab', 'tech', 'progress'];
+  const NAV_ORDER = ['', 'learn', 'path', 'figures', 'train', 'lab', 'tech', 'progress'];
   const navOf = (v) => (v === 'card' ? 'learn' : v === 'play' ? 'train' : v || '');
   function parentHash() {
     const { parts } = parse(), v = parts[0] || '';
